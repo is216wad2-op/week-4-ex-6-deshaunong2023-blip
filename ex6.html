@@ -1,11 +1,11 @@
 <!DOCTYPE html>
+<!-- Wk5 Ex6 solution -->
 <html>
 <body>
-
     <h1>Shopping List</h1>
 
     <select id="select_item">
-        <option value="Notebook">Notebook</option>
+        <option value="NoteBook">Notebook</option>
         <option value="Jello">Jello</option>
         <option value="Spinach">Spinach</option>
         <option value="Rice">Rice</option>
@@ -17,32 +17,19 @@
     <ul id="shopList"></ul>
 
     <script>
-        
-        var selected_item = document.getElementById("select_item");
-        var ul = document.getElementById("shopList");
-
-        selected_item.addEventListener("change",addNewItem);
-        
+        let selected_item = document.getElementById("select_item");
+        selected_item.addEventListener("change", addNewItem);
 
         function addNewItem() {
-           var selectedValue= selected_item.value;
-           var items = ul.getElementsByTagName("li");
-           for (var i = 0; i < items.length; i++) {
-                if (items[i].innerText === selectedValue) {
-                    return; // Item already present, do not add again
-                }
+            console.log(selected_item.value);
+        
+            let ul = document.getElementById("shopList");
             let li = document.createElement("li");
             let textNode = document.createTextNode(selected_item.value);
             li.appendChild(textNode);
             ul.appendChild(li);  
-
          }
-        }
-        // add code here
     
     </script>
-
-    
-
     </body>
 </html>
